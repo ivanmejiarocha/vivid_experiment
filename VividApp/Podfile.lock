@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (4.7.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Hero (1.1.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Hero (~> 1.1.0)
+  - RxCocoa (~> 4.1.2)
+  - RxSwift (~> 4.1.2)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: 46135c2f3a72945c6238f9981574de25bfbaa5d5
+
+COCOAPODS: 1.4.0

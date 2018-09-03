@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.4'
+
+target 'VividApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for VividApp
+  
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'Alamofire', '~> 4.7'
+  pod 'RxSwift',  '~> 4.1.2'
+  pod 'RxCocoa',  '~> 4.1.2'
+  pod 'Hero', '~> 1.1.0'
+
+  target 'VividAppTests' do
+    inherit! :search_paths
+    # Pods for testing    
+  end
+
+  target 'VividAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

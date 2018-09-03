@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class HomeViewController: UITableViewController {
+
+    private var viewModel: HomeViewModel?
+    private var cards: [Card]?
+    private var imageCache: [Int32:UIImage]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // initialize internal state ...
+        viewModel = HomeViewModel()
+        imageCache = [Int32:UIImage]()
+
+        // register cell ...
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+
+        // async load of cards ...
+        if let vm = viewModel {
+            vm.loadCards { (cards) in
+                self.cards = cards
+                self.tableView.reloadData()
+                self.showVisibleCellsImage()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,22 +43,35 @@ class HomeViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        if let c = cards {
+            return c.count
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
+        let card = cards![indexPath.row]
 
         // Configure the cell...
-        cell.information.text = "Information"
-        cell.date.text = "Date goes here"
-        cell.topLabel.text = "This is the top label"
+        cell.topLabel.text = card.topLabel
+        cell.information.text = card.middleLabel
+        cell.information.textColor = UIColor.flatGrayDark
+        cell.information.backgroundColor = UIColor(hexString: "e7e7e7")
+        cell.date.text = card.bottomLabel
+        cell.date.textColor = UIColor.black
+        cell.date.font = UIFont.boldSystemFont(ofSize: 12)
+        cell.date.backgroundColor = UIColor(hexString: "e7e7e7")
+        if let img = imageCache![card.targetId] {
+            cell.photoImage.image = img
+        }
+        else {
+            cell.photoImage.image = UIImage(named: "default_image")
+        }
 
         return cell
     }
@@ -89,4 +121,40 @@ class HomeViewController: UITableViewController {
     }
     */
 
+}
+
+extension HomeViewController {
+
+    private func showVisibleCellsImage() {
+        let visibleCells = tableView.visibleCells as! [HomeTableViewCell]
+
+        visibleCells.forEach { (cell) in
+            let indexPath = tableView.indexPath(for: cell)!
+
+            let card = cards![indexPath.row]
+            if imageCache![card.targetId] == nil {
+
+                let service = VividSeatsService()
+                service.loadCardImage(url: card.image, cardImage: { (cardImage) in
+
+                    if let img = cardImage {
+                        self.imageCache![card.targetId] = img
+                        cell.photoImage.setImageAnimated(image: self.imageCache![card.targetId]!)
+                    }
+
+                })
+            }
+            else {
+
+                cell.photoImage.setImageAnimated(image: imageCache![card.targetId]!)
+
+            }
+        }
+    }
+}
+
+extension HomeViewController {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        showVisibleCellsImage()
+    }
 }

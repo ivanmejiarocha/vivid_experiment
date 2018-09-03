@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class HomeViewModel {
+    private var cards: [Card]?
+
+    func loadCards(cards: @escaping Cards) {
+        if let c = self.cards {
+            cards(c)
+        }
+        else {
+            let service = VividSeatsService()
+            service.loadCards(cards: cards)
+        }
+    }
+}
