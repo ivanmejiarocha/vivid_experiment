@@ -8,14 +8,14 @@
 
 ### The following components will be used:
 
-* ChamaleonFramework for cool colors
-* Alamofire for networking and REST API invokation
-* Hero for smooth transition animations.
+* [ChamaleonFramework](https://github.com/viccalexander/Chameleon) for cool colors
+* [Alamofire](https://github.com/Alamofire/Alamofire) for networking and REST API invokation
+* [Hero](https://github.com/HeroTransitions/Hero) for smooth transition animations.
 
 ### How to build
 
 ##### Prerequisites to build 
-* you nee to install [Cocoapods](https://cocoapods.org)
+* you need to install [Cocoapods](https://cocoapods.org)
 
 ##### Building process
 
