@@ -12,5 +12,21 @@
 
 ### How to build
 
+##### Prerequisites to build 
+* you nee to install [Cocoapods](https://cocoapods.org)
+
+##### Building process
+
 * git clone https://github.com/ivanmejiarocha/vivid_experiment.git
-* cd vivid_experiment_
+* type the following commands on the Terminal:
+
+        $ cd vivid_experiment/VividApp
+        $ pod install
+        $ open VividApp.xcworkspace
+    
+* On Xcode
+
+    * Command + B ( to build )
+    * Command + R ( to build and run )
+    
+* You'r done!
