@@ -9,10 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias Cards = ([Card]) -> Void
-typealias CardImage = (UIImage?) -> Void
-
-class VividSeatsService {
+class VividSeatsService: IVividSeatsService {
     let serviceEndpoint: String = "https://webservices.vividseats.com"
 
     func loadCards(cards:@escaping Cards) {
@@ -28,11 +25,12 @@ class VividSeatsService {
                     if let jsonStr = String(data: response.data!, encoding: .utf8) {
                         let decoder = JSONDecoder()
                         let jsonData = try decoder.decode([Card].self, from: jsonStr.data(using: .utf8)!)
-                        cards(jsonData)
+                        cards(jsonData, nil)
                     }
                 }
                 catch let error {
                     print("error decoding JSON: \(error)")
+                    cards(nil, VividSeatsServiceException.invalidDataFormat)
                 }
         }
     }

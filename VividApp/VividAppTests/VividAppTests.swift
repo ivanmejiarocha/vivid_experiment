@@ -10,16 +10,15 @@ import XCTest
 @testable import VividApp
 
 class VividAppTests: XCTestCase {
-    
+
+    var service: VividSeatsService!
+    var mockService: MockVividSeatsService!
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let service = VividSeatsService()
-        service.loadCardImage(url: "") { (image) in
-            if let img = image {
-                print(img.size)
-            }
-        }
+        service = VividSeatsService()
+        mockService = MockVividSeatsService()
     }
     
     override func tearDown() {
@@ -27,9 +26,20 @@ class VividAppTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLoadCards() {
+        service.loadCards { (cards, error) in
+            XCTAssert(error == nil)
+            XCTAssert((cards?.count)! > 0)
+        }
+    }
+
+    func testInvalidFormatException() {
+        mockService.loadCards { (cards, error) in
+            XCTAssert(error != nil)
+            if let e = error {
+                print("error: \(e.localizedDescription)")
+            }
+        }
     }
     
     func testPerformanceExample() {

@@ -32,10 +32,17 @@ class HomeViewController: UITableViewController {
 
         // async load of cards ...
         if let vm = viewModel {
-            vm.loadCards { (cards) in
-                self.cards = cards
-                self.tableView.reloadData()
-                self.showVisibleCellsImage()
+            vm.loadCards { (cards, error) in
+                if let e = error {
+                    let alert = UIAlertController(title: "Error loading cards", message: e.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+                else {
+                    self.cards = cards
+                    self.tableView.reloadData()
+                    self.showVisibleCellsImage()
+                }
             }
         }
     }

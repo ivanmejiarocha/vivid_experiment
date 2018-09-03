@@ -26,6 +26,8 @@
 		E6D50DA4213DAD3300348821 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DA3213DAD3300348821 /* UIImageViewExtensions.swift */; };
 		E6D50DA6213DB63100348821 /* CoolList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D50DA5213DB63100348821 /* CoolList.storyboard */; };
 		E6D50DAA213DB9B600348821 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DA9213DB9B600348821 /* DetailViewController.swift */; };
+		E6D50DAC213DDF0800348821 /* IVividSeatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DAB213DDF0800348821 /* IVividSeatsService.swift */; };
+		E6D50DAF213DDFC500348821 /* MockVividSeatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DAE213DDFC500348821 /* MockVividSeatsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		E6D50DA3213DAD3300348821 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		E6D50DA5213DB63100348821 /* CoolList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoolList.storyboard; sourceTree = "<group>"; };
 		E6D50DA9213DB9B600348821 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E6D50DAB213DDF0800348821 /* IVividSeatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVividSeatsService.swift; sourceTree = "<group>"; };
+		E6D50DAE213DDFC500348821 /* MockVividSeatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVividSeatsService.swift; sourceTree = "<group>"; };
 		E8519D387A4A34F73A684946 /* Pods_VividAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA11AB187C8FA26DEAD23E8 /* Pods_VividApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -219,7 +223,9 @@
 		E6D50D8F213D815300348821 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E6D50DAD213DDFB100348821 /* Mocks */,
 				E6D50D9E213DAB9E00348821 /* VividSeatsService.swift */,
+				E6D50DAB213DDF0800348821 /* IVividSeatsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -230,6 +236,14 @@
 				E6D50DA3213DAD3300348821 /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E6D50DAD213DDFB100348821 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E6D50DAE213DDFC500348821 /* MockVividSeatsService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,11 +559,13 @@
 			files = (
 				E6D50DAA213DB9B600348821 /* DetailViewController.swift in Sources */,
 				E6D50D5E213D7F5000348821 /* SecondViewController.swift in Sources */,
+				E6D50DAF213DDFC500348821 /* MockVividSeatsService.swift in Sources */,
 				E6D50DA1213DAC0000348821 /* VividCard.swift in Sources */,
 				E6D50DA4213DAD3300348821 /* UIImageViewExtensions.swift in Sources */,
 				E6D50D9F213DAB9E00348821 /* VividSeatsService.swift in Sources */,
 				E6D50D98213D83ED00348821 /* HomeTableViewCell.swift in Sources */,
 				E6D50D5A213D7F5000348821 /* AppDelegate.swift in Sources */,
+				E6D50DAC213DDF0800348821 /* IVividSeatsService.swift in Sources */,
 				E6D50D8B213D811B00348821 /* HomeViewController.swift in Sources */,
 				E6D50D91213D816800348821 /* HomeViewModel.swift in Sources */,
 			);

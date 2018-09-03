@@ -13,7 +13,7 @@ class HomeViewModel {
 
     func loadCards(cards: @escaping Cards) {
         if let c = self.cards {
-            cards(c)
+            cards(c, nil)
         }
         else {
             let service = VividSeatsService()
