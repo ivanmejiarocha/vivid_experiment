@@ -14,6 +14,12 @@ class VividAppTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let service = VividSeatsService()
+        service.loadCardImage(url: "") { (image) in
+            if let img = image {
+                print(img.size)
+            }
+        }
     }
     
     override func tearDown() {

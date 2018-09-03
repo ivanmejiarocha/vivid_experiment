@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import Hero
 
 class HomeViewController: UITableViewController {
 
@@ -53,6 +54,11 @@ class HomeViewController: UITableViewController {
         return 0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "GoDetails", sender: cell)
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
         let card = cards![indexPath.row]
@@ -64,7 +70,6 @@ class HomeViewController: UITableViewController {
         cell.information.backgroundColor = UIColor(hexString: "e7e7e7")
         cell.date.text = card.bottomLabel
         cell.date.textColor = UIColor.black
-        cell.date.font = UIFont.boldSystemFont(ofSize: 12)
         cell.date.backgroundColor = UIColor(hexString: "e7e7e7")
         if let img = imageCache![card.targetId] {
             cell.photoImage.image = img
@@ -156,5 +161,27 @@ extension HomeViewController {
 extension HomeViewController {
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         showVisibleCellsImage()
+    }
+}
+
+extension HomeViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        //self.hero.isEnabled = true
+
+        if let currentCell = sender as? HomeTableViewCell,
+            let vc = segue.destination as? DetailViewController,
+            let currentCellIndex = tableView.indexPathForSelectedRow {
+
+            let card = cards![currentCellIndex.row]
+            vc.image = imageCache![card.targetId]
+            vc.card = card
+            vc.view.hero.id = currentCell.hero.id
+
+        }
     }
 }
