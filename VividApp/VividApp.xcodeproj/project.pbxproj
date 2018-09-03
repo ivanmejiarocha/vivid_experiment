@@ -24,6 +24,8 @@
 		E6D50D9F213DAB9E00348821 /* VividSeatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50D9E213DAB9E00348821 /* VividSeatsService.swift */; };
 		E6D50DA1213DAC0000348821 /* VividCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DA0213DAC0000348821 /* VividCard.swift */; };
 		E6D50DA4213DAD3300348821 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DA3213DAD3300348821 /* UIImageViewExtensions.swift */; };
+		E6D50DA6213DB63100348821 /* CoolList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D50DA5213DB63100348821 /* CoolList.storyboard */; };
+		E6D50DAA213DB9B600348821 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D50DA9213DB9B600348821 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E6D50D9E213DAB9E00348821 /* VividSeatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VividSeatsService.swift; sourceTree = "<group>"; };
 		E6D50DA0213DAC0000348821 /* VividCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VividCard.swift; sourceTree = "<group>"; };
 		E6D50DA3213DAD3300348821 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		E6D50DA5213DB63100348821 /* CoolList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoolList.storyboard; sourceTree = "<group>"; };
+		E6D50DA9213DB9B600348821 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E8519D387A4A34F73A684946 /* Pods_VividAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA11AB187C8FA26DEAD23E8 /* Pods_VividApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VividApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +193,8 @@
 				E6D50D8A213D811B00348821 /* HomeViewController.swift */,
 				E6D50D96213D83ED00348821 /* HomeTableViewCell.swift */,
 				E6D50D97213D83ED00348821 /* HomeTableViewCell.xib */,
+				E6D50DA5213DB63100348821 /* CoolList.storyboard */,
+				E6D50DA9213DB9B600348821 /* DetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D50DA6213DB63100348821 /* CoolList.storyboard in Resources */,
 				E6D50D66213D7F5100348821 /* LaunchScreen.storyboard in Resources */,
 				E6D50D63213D7F5100348821 /* Assets.xcassets in Resources */,
 				E6D50D99213D83ED00348821 /* HomeTableViewCell.xib in Resources */,
@@ -536,6 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D50DAA213DB9B600348821 /* DetailViewController.swift in Sources */,
 				E6D50D5E213D7F5000348821 /* SecondViewController.swift in Sources */,
 				E6D50DA1213DAC0000348821 /* VividCard.swift in Sources */,
 				E6D50DA4213DAD3300348821 /* UIImageViewExtensions.swift in Sources */,
@@ -720,7 +728,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -736,7 +747,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -753,7 +767,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -771,7 +789,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -788,7 +810,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -805,7 +831,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J69H956Y;
 				INFOPLIST_FILE = VividAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivmero.VividAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
