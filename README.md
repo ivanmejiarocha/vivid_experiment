@@ -10,5 +10,7 @@
 * ChamaleonFramework for cool colors
 * Alamofire for networking and REST API invokation
 
+######How to build
 
-
+* git clone https://github.com/ivanmejiarocha/vivid_experiment.git
+* cd vivid_experiment_
