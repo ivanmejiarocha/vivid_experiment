@@ -13,9 +13,17 @@ class VividSeatsService: IVividSeatsService {
     let serviceEndpoint: String = "https://webservices.vividseats.com"
 
     func loadCards(cards:@escaping Cards) {
+
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = Date()
+        let todaysDate = dateFormatter.string(from: date)
+        let date2 = date.addingTimeInterval(60*60*24*5)
+        let futureDate = dateFormatter.string(from: date2)
+
         Alamofire.request("\(serviceEndpoint)/rest/mobile/v1/home/cards",
             method: .post,
-            parameters: ["startDate": "2018-09-02","endDate": "2018-09-18","includeSuggested": "true"],
+            parameters: ["startDate":todaysDate,"endDate": futureDate,"includeSuggested": "true"],
             encoding: JSONEncoding.default,
             headers: ["X-Mobile-Platform":"iOS|Android", "Content-Type":"application/json"])
             .validate(statusCode: 200..<300)

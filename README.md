@@ -4,11 +4,13 @@
 
 * Invoking REST API asynchronously
 * Render JSON respose into a Table view in an smooth way.
+* Perform some smooth transitions when a cell of the table view is tapped.
 
 ### The following components will be used:
 
 * ChamaleonFramework for cool colors
 * Alamofire for networking and REST API invokation
+* Hero for smooth transition animations.
 
 ### How to build
 
