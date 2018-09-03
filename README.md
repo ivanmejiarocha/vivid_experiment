@@ -5,6 +5,7 @@
 * Invoking REST API asynchronously
 * Render JSON respose into a Table view in an smooth way.
 * Perform some smooth transitions when a cell of the table view is tapped.
+* Unit tests.
 
 ### The following components will be used:
 
