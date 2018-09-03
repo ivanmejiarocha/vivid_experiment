@@ -16,6 +16,10 @@ class HomeViewController: UITableViewController {
     private var cards: [Card]?
     private var imageCache: [Int32:UIImage]?
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,6 +81,8 @@ class HomeViewController: UITableViewController {
         else {
             cell.photoImage.image = UIImage(named: "default_image")
         }
+
+        cell.hero.id = "cell-\(indexPath.row)"
 
         return cell
     }
@@ -165,10 +171,6 @@ extension HomeViewController {
 }
 
 extension HomeViewController {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         //self.hero.isEnabled = true

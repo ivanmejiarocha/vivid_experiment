@@ -13,6 +13,10 @@ class DetailViewController: UIViewController {
     @IBOutlet var information: UILabel!
     var image: UIImage?
     var card: Card?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
