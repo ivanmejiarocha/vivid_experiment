@@ -1,6 +1,6 @@
 ## VividApp
 
-![main-list](./main-list.png) tap an item -> ![main-list](./tap-transition-from-list.png)
+![main-list](./main-list.png) smooth transition after tapping an item -> ![main-list](./tap-transition-from-list.png)
 
 ### This is a simple application showing the following functionality:
 
